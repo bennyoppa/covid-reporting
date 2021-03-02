@@ -1,6 +1,11 @@
 # Covid-19 Reporting On Azure Cloud
 
-Utilise Azure cloud service to create a Covid-19 reporting side project.
+Create a Covid-19 reporting project utilising the following Azure services:
+- Data Factory
+- SQL DB
+- Data Lake
+- Databricks
+- HDInsight
 
 
 &nbsp;
@@ -23,7 +28,7 @@ Utilise Azure cloud service to create a Covid-19 reporting side project.
 
 ## 2020-02-23
 
-### Copied a dataset from Blob Storage to DataLake
+### Prepared containers in Blob Storage and DataLake
 1. Created a container ('population') in Blob Storage
 2. Created a container ('raw') in Datalake
 3. Uploaded gzip file 'population_by_age.tsv.gz' to 'population' container in Blob Storage
@@ -43,8 +48,19 @@ Utilise Azure cloud service to create a Covid-19 reporting side project.
     * file path: 'population/population_by_age.tsv.gz'
 4. Created a dataset ('ds_population_raw_tsv')
     * linked service: 'ls_adls_c19reportingdatalake'
-    * file path: 'raw/population_by_age.tsv'
+    * file path: 'raw/population/population_by_age.tsv'
+5. Published these 2 datasets
 
+&nbsp;
+
+### Created data pipeline to move data from Blob Storage to ADLS
+1. Created a data pipeline ('pl_ingest_population_data')
+2. Created a copy activity ('Copy Population Data') in the pipeline
+    * timeout: 0.00:05:00 (which is 5 mins)
+    * source dataset: 'ds_population_raw_gz'
+    * sink dataset: 'ds_population_raw_tsv'
+3. Published the copy activity
+4. Debug the copy activity
 
 
 
