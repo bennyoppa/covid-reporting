@@ -18,7 +18,7 @@ Create a Covid-19 reporting project utilising the following Azure services:
 - Resource Group (covid-19-reporting-rg)
 - SQL DB (c19-server/c19-db)
 - Data Factory (c19-reporting-df)
-- Datalake (c19reportingdatalake)
+- Data Lake (c19reportingdatalake)
 - Blob Storage (c19reportingstorageacct)
 
 
