@@ -39,11 +39,11 @@ Utilise Azure cloud service to create a Covid-19 reporting side project.
 1. Created a linked service ('ls_blob_c19reportingstorageacct') for Blob Storage
 2. Created a linked service ('ls_adls_c19reportingdatalake') for ADLS Gen 2
 3. Created a dataset ('ds_population_raw_gz')
-  - linked service: 'ls_blob_c19reportingstorageacct'
-  - file path: 'population/population_by_age.tsv.gz'
+  * linked service: 'ls_blob_c19reportingstorageacct'
+  * file path: 'population/population_by_age.tsv.gz'
 4. Created a dataset ('ds_population_raw_tsv')
-  - linked service: 'ls_adls_c19reportingdatalake'
-  - file path: 'raw/population_by_age.tsv'
+  * linked service: 'ls_adls_c19reportingdatalake'
+  * file path: 'raw/population_by_age.tsv'
 
 
 
